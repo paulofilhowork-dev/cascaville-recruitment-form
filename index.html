@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário de Candidatura - Studio Cascaville</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    h1, h2 {
+      color: #f0f6fc;
+    }
+
+    form {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    form:hover {
+      box-shadow: 0 0 20px rgba(255,255,255,0.07);
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-size: 15px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #58a6ff;
+      outline: none;
+      background-color: #0f141a;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .checkbox-group, .radio-group {
+      margin-top: 8px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      font-weight: normal;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      margin-right: 8px;
+      accent-color: #58a6ff;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      border: none;
+      background-color: #238636;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.25s ease, transform 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button:hover {
+      background-color: #2ea043;
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      background-color: #30363d;
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .spinner {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid #fff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #8b949e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #30363d;
+      margin: 30px 0;
+    }
+
+    footer {
+      text-align: center;
+      color: #6e7681;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <form action="https://formspree.io/f/xpwoagdd" method="POST" onsubmit="handleSubmit(event)">
+      <h1>📝 Formulário de Candidatura - Studio Cascaville</h1>
+      <p><strong>(N.E.A.E. Production - Recrutamento)</strong></p>
+      <p>ATENÇÃO: O Studio Cascaville é uma Fábrica de IP em ciclo de produção de 6 semanas. Este formulário é para avaliar seu profissionalismo e compromisso com prazos rigorosos.</p>
+      
+      <hr>
+      <h2>Seção 1: Dados Pessoais e Contato</h2>
+      <label>Nome Completo:</label>
+      <input type="text" name="nome" required>
+
+      <label>Nick/ID do Discord:</label>
+      <input type="text" name="discord" placeholder="Ex: NomeDeUsuario#0000" required>
+
+      <label>E-mail de Contato Principal:</label>
+      <input type="email" name="email" required>
+
+      <label>Idade:</label>
+      <input type="number" name="idade" min="15" placeholder="Recomendamos 18+" required>
+
+      <label>Fuso Horário Atual:</label>
+      <input type="text" name="fuso" placeholder="Ex: Brasília/São Paulo - GMT-3" required>
+
+      <hr>
+      <h2>Seção 2: Interesse e Função</h2>
+      <label>Para qual cargo você está se candidatando?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="cargo" value="Roteiro"> Roteiro (✍️ Criativo)</label>
+        <label><input type="checkbox" name="cargo" value="Arte e Finalização"> Arte e Finalização (🛠️ Criativo)</label>
+        <label><input type="checkbox" name="cargo" value="Revisão/QA"> Revisão/QA (✔️ QA/Revisão)</label>
+        <label><input type="checkbox" name="cargo" value="Mídia/Marketing"> Mídia/Marketing (📣 Mídia & Dados)</label>
+      </div>
+
+      <label>Por que você se identifica com o tom do universo Cascaville (ácido, cínico e de alto contraste)?</label>
+      <textarea name="identificacao" required></textarea>
+
+      <label>Qual o seu nível de dedicação semanal (horas/semana) que pode ser GARANTIDO?</label>
+      <input type="text" name="dedicacao" required>
+
+      <hr>
+      <h2>Seção 3: Experiência e Profissionalismo</h2>
+      <label>Link para Portfólio ou Amostras:</label>
+      <input type="url" name="portfolio">
+
+      <p class="note">Nota: O Studio busca QUALIDADE CONSISTENTE, não apenas quantidade.</p>
+
+      <label>Descreva uma situação onde você teve que cumprir um prazo MUITO apertado:</label>
+      <textarea name="prazo" required></textarea>
+
+      <label>Você utiliza software de gestão de tarefas (Trello, Notion, Asana, etc.)? Se sim, qual?</label>
+      <input type="text" name="gestao">
+
+      <label>Você tem experiência em workflow por etapas (6 semanas: Roteiro → Arte → Revisão)?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="workflow" value="Sim" required> Sim</label>
+        <label><input type="radio" name="workflow" value="Não"> Não</label>
+      </div>
+
+      <hr>
+      <h2>Seção 4: Segurança e Propriedade Intelectual</h2>
+      <label>Você entende que o Studio Cascaville é uma IP com potencial de monetização e material confidencial?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="sigilo" value="Sim" required> Sim, entendo a natureza sigilosa.</label>
+        <label><input type="radio" name="sigilo" value="Não"> Não.</label>
+      </div>
+
+      <label>Em caso de vazamento acidental, qual seria sua primeira ação imediata?</label>
+      <textarea name="acao" required></textarea>
+
+      <label>Você está disposto(a) a assinar um Acordo de Confidencialidade (NDA)?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="nda" value="Sim" required> Sim, estou disposto(a).</label>
+        <label><input type="radio" name="nda" value="Não"> Não.</label>
+      </div>
+
+      <hr>
+      <h2>Seção 5: Finalização</h2>
+      <label>Diga-nos algo que você acha que fará toda a diferença no Studio:</label>
+      <textarea name="diferencial" required></textarea>
+
+      <p class="note">Ao enviar este formulário, você concorda que o Studio Cascaville poderá utilizar as informações para fins de avaliação de recrutamento.</p>
+
+      <button type="submit" id="submitBtn">
+        Enviar Candidatura
+      </button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 Studio Cascaville. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const button = document.getElementById("submitBtn");
+
+      button.disabled = true;
+      button.innerHTML = 'Enviando <span class="spinner"></span>';
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          window.location.href = "thankyou.html";
+        } else {
+          alert("Erro ao enviar o formulário. Tente novamente.");
+          button.disabled = false;
+          button.innerHTML = "Enviar Candidatura";
+        }
+      } catch (error) {
+        alert("Falha na conexão. Verifique sua internet e tente novamente.");
+        button.disabled = false;
+        button.innerHTML = "Enviar Candidatura";
+      }
+    }
+  </script>
+</body>
+</html>
